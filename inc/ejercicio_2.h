@@ -1,13 +1,13 @@
 /*=============================================================================
  * Authors: Carlos Maffrand 	<carlosmaffrand5@gmail.com>
  *			Hernan Gomez Molino	<hernangomezmolino@gmail.com>
- * Date: 2021/07/02
+ * Date: 2021/07/07
  *===========================================================================*/
 
 /*=====[Avoid multiple inclusion - begin]====================================*/
 
-#ifndef __EJERCICIO_1M_H__
-#define __EJERCICIO_1M_H__
+#ifndef __EJERCICIO_2_H__
+#define __EJERCICIO_2_H__
 
 /*=====[Inclusions of public function dependencies]==========================*/
 
@@ -43,4 +43,4 @@ static void activarSecuencia(gpioMap_t * psecuencia, bool_t dirValue);
 
 /*=====[Avoid multiple inclusion - end]======================================*/
 
-#endif /* __EJERCICIO_1M_H__ */
+#endif /* __EJERCICIO_2_H__ */
