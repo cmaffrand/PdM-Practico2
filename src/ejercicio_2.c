@@ -7,7 +7,9 @@
 /*=====[Inclusions of function dependencies]=================================*/
 
 #include "sapi.h"
+#include "teclas.h"
 #include "ejercicio_2.h"
+
 
 /*=====[Definition macros of private constants]==============================*/
 
@@ -100,21 +102,7 @@ static bool_t apagarLeds(void)
    return ret_val;
 }
 
-static bool_t leerTecla (gpioMap_t tecla)
-{
-	bool_t ret_val;
 
-   if ((tecla == TEC1) || (tecla == TEC2) || (tecla == TEC3) || (tecla == TEC4)) {
-	   ret_val = gpioRead( tecla );
-   }
-   else {
-   // No se puede leer ninguna tecla.
-   ret_val     = 1;
-   printf("\n Error: Se intentó presionar una tecla no permitida");
-   }
-
-	return ret_val;
-}
 
 static void activarSecuencia(gpioMap_t * psecuencia, bool_t dirValue) {
 	static uint8_t estado = 0;

@@ -3,8 +3,9 @@
  *			Hernan Gomez Molino	<hernangomezmolino@gmail.com>
  * Date: 2021/07/07
  *===========================================================================*/
+
+#include "sapi.h"
 #include "teclas.h"
-//#include "sapi.h"
 
 bool_t leerTecla (gpioMap_t tecla)
 {

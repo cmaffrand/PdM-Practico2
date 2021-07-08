@@ -32,7 +32,6 @@ extern "C" {
 
 static bool_t encenderLed( gpioMap_t led );
 static bool_t apagarLeds(void);
-static bool_t leerTecla (gpioMap_t tecla);
 static void activarSecuencia(gpioMap_t * psecuencia, bool_t dirValue);
 
 /*=====[C++ - end]===========================================================*/
