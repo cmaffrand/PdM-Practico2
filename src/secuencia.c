@@ -32,7 +32,7 @@ void activarSecuencia(gpioMap_t * psecuencia, bool_t dirValue, tick_t * ptiempos
 	   if (estado > ultimoLed-1) estado = ultimoLed-1;
    }
 
-	delayInit( &NonBlockingDelay, ptiempos[3] );
+	delayInit( &NonBlockingDelay, ptiempos[estado] );
 
    //  Chequeo y llamado de funciones sobre leds
    if (!(apagarLeds())) {
