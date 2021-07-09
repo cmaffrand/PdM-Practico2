@@ -20,7 +20,7 @@ void activarSecuencia(gpioMap_t * psecuencia, bool_t dirValue, tick_t * ptiempos
 
 	static uint8_t estado = 0;
 
-
+	// Evaluación del estado de la secuencia, observando la dirección.
 	if (dirValue == FALSE) {
 		// Rotacion a la derecha
 		estado++;
@@ -32,6 +32,7 @@ void activarSecuencia(gpioMap_t * psecuencia, bool_t dirValue, tick_t * ptiempos
 	   if (estado > ultimoLed-1) estado = ultimoLed-1;
    }
 
+	// Se reinicia el retardo no bloqueante con el tiempo asignado al led correspondiente
 	delayInit( &NonBlockingDelay, ptiempos[estado] );
 
    //  Chequeo y llamado de funciones sobre leds

@@ -22,7 +22,8 @@ extern "C" {
 
 /*=====[Definition macros of public constants]===============================*/
 
-const uint8_t ultimoLed; //prototipo de la const ultimoLed para la función activarSecuencia
+//prototipo de ultimoLed para la función activarSecuencia
+uint8_t ultimoLed;
 delay_t NonBlockingDelay;
 
 /*=====[Public function-like macros]=========================================*/

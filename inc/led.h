@@ -22,6 +22,10 @@ extern "C" {
 
 /*=====[Definition macros of public constants]===============================*/
 
+// Se crea un valor de led nulo, para determinar que todos los leds tienen que
+// estar apagados.
+#define LED_OFF 46
+
 /*=====[Public function-like macros]=========================================*/
 
 /*=====[Definitions of public data types]====================================*/

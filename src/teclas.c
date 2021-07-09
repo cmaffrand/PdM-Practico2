@@ -18,6 +18,7 @@ bool_t leerTecla (gpioMap_t tecla)
 {
 	bool_t ret_val;
 
+   // Validacion de teclas presentes en la placa EDU CIAA.
    if ((tecla == TEC1) || (tecla == TEC2) || (tecla == TEC3) || (tecla == TEC4)) {
 	   ret_val = gpioRead( tecla );
    }

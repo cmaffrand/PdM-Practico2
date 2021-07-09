@@ -10,17 +10,21 @@
 /*=============================================================================
 * Funcion: encenderLed -> Utilizada para encender leds en la placa EDU CIAA.
 * Parametros de Entrada: gpioMap_t led, tipo de datos de sapi.h
-* Valor de retorno:	ret_val -> TRUE si la función se ejecutó correctamente *
-* ->FALSE si no se pudo encender el led.	 	*
+* Valor de retorno:	ret_val -> TRUE si la función se ejecutó correctamente.
+* 							-> FALSE si no se pudo encender el led.
 *=============================================================================*/
 
 bool_t encenderLed( gpioMap_t led )
 {
    bool_t ret_val     = 1;
 
-   if ((led == LEDB) || (led == LED1) || (led == LED2) || (led == LED3)) {
+   // Chequeo de los valores de LEDs presentes en la EDU CIAA.
+   if ((led == LEDR) || (led == LEDG) || (led == LEDB) || (led == LED1) || (led == LED2) || (led == LED3)) {
 	   gpioWrite( led, 1 );
    }
+   // Este es un led inexistente en la placa, para generar un estado donde
+   // todos los leds están apagados.
+   else if (led == LED_OFF) ret_val     = 1;
    else {
 	   // No se puede encender ningun led.
 	   ret_val     = 0;
