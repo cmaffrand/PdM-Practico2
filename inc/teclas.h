@@ -28,10 +28,10 @@ extern "C" {
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
-/*=====[Prototypes (declarations) of public interrupt functions]=============*/
-
-
 bool_t leerTecla (gpioMap_t tecla);
+
+
+/*=====[Prototypes (declarations) of public interrupt functions]=============*/
 
 /*=====[C++ - end]===========================================================*/
 

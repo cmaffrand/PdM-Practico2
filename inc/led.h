@@ -1,13 +1,13 @@
 /*=============================================================================
  * Authors: Carlos Maffrand 	<carlosmaffrand5@gmail.com>
  *			Hernan Gomez Molino	<hernangomezmolino@gmail.com>
- * Date: 2021/07/07
+ * Date: 2021/07/09
  *===========================================================================*/
 
 /*=====[Avoid multiple inclusion - begin]====================================*/
 
-#ifndef __EJERCICIO_2_H__
-#define __EJERCICIO_2_H__
+#ifndef __LED_H__
+#define __LED_H__
 
 /*=====[Inclusions of public function dependencies]==========================*/
 
@@ -28,6 +28,9 @@ extern "C" {
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
+bool_t encenderLed( gpioMap_t led );
+bool_t apagarLeds(void);
+
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
 
 /*=====[C++ - end]===========================================================*/
@@ -38,4 +41,4 @@ extern "C" {
 
 /*=====[Avoid multiple inclusion - end]======================================*/
 
-#endif /* __EJERCICIO_2_H__ */
+#endif /* __LED_H__ */

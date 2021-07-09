@@ -1,13 +1,13 @@
 /*=============================================================================
  * Authors: Carlos Maffrand 	<carlosmaffrand5@gmail.com>
  *			Hernan Gomez Molino	<hernangomezmolino@gmail.com>
- * Date: 2021/07/07
+ * Date: 2021/07/09
  *===========================================================================*/
 
 /*=====[Avoid multiple inclusion - begin]====================================*/
 
-#ifndef __EJERCICIO_2_H__
-#define __EJERCICIO_2_H__
+#ifndef __SECUENCIA_H__
+#define __SECUENCIA_H__
 
 /*=====[Inclusions of public function dependencies]==========================*/
 
@@ -22,11 +22,16 @@ extern "C" {
 
 /*=====[Definition macros of public constants]===============================*/
 
+const uint8_t ultimoLed; //prototipo de la const ultimoLed para la función activarSecuencia
+delay_t NonBlockingDelay;
+
 /*=====[Public function-like macros]=========================================*/
 
 /*=====[Definitions of public data types]====================================*/
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
+
+void activarSecuencia(gpioMap_t * psecuencia, bool_t dirValue, tick_t * ptiempos);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
 
@@ -38,4 +43,4 @@ extern "C" {
 
 /*=====[Avoid multiple inclusion - end]======================================*/
 
-#endif /* __EJERCICIO_2_H__ */
+#endif /* __SECUENCIA_H__ */

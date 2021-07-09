@@ -8,7 +8,7 @@
 #include "teclas.h"
 
 /*=============================================================================
-* Funcion: leerTecla -> Utilizada para leer teclas en la placa EDU CIA.
+* Funcion: leerTecla -> Utilizada para leer teclas en la placa EDU CIAA.
 * Parametros de Entrada: gpioMap_t tecla tipo de datos de sapi.h
 * Valor de retorno:	ret_val -> 1 si la función se ejecutó correctamente * 0 si
 * no fue pulsada una tecla permitida.	 	*
