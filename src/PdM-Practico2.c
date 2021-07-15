@@ -6,11 +6,11 @@
 
 /*=====[Inclusions of function dependencies]=================================*/
 
+#include "PdM-Practico2.h"
 #include "sapi.h"
 #include "teclas.h"
 #include "led.h"
 #include "secuencia.h"
-#include "ejercicio_2.h"
 
 /*=====[Definition macros of private constants]==============================*/
 
@@ -60,16 +60,19 @@ int main( void )
 			   psecuencia 	= semaforo_normal;
 			   ptiempos 	= tiempos_normal;
 			   ultimoLed 	= sizeof(semaforo_normal)/sizeof(gpioMap_t);
+			   printf("Secuencia Normal\n");
 		   }
 		   else if (selecSecuencia == 1) {
 			   psecuencia 	= semaforo_desconectado;
 			   ptiempos 	= tiempos_desconectado;
 			   ultimoLed 	= sizeof(semaforo_desconectado)/sizeof(gpioMap_t);
+			   printf("Secuencia Desconectado\n");
 		   }
 		   else {
 			   psecuencia 	= semaforo_alarma;
 			   ptiempos 	= tiempos_alarma;
 			   ultimoLed 	= sizeof(semaforo_alarma)/sizeof(gpioMap_t);
+			   printf("Secuencia Alarma\n");
 		   }
 		   // Ejecución de la secuencia.
 		   activarSecuencia(psecuencia, TRUE, ptiempos);
@@ -81,7 +84,7 @@ int main( void )
 			if (camSecFlag == FALSE) {
 				if (leerTecla( TEC2 ) == OFF) {
 					selecSecuencia++;
-					if (selecSecuencia == 3) selecSecuencia = 0;
+					if (selecSecuencia >= 3) selecSecuencia = 0;
 					camSecFlag = TRUE;
 				}
 			}
