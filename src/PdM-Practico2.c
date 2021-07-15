@@ -49,6 +49,7 @@ int main( void )
 
    // Mensaje de inició del programa
    printf("Secuencia Comenzada\n");
+   printf("Secuencia Normal\n");
    ultimoLed = sizeof(semaforo_normal)/sizeof(gpioMap_t);
    // ----- Repeat for ever -------------------------
    while( true ) {
@@ -60,19 +61,19 @@ int main( void )
 			   psecuencia 	= semaforo_normal;
 			   ptiempos 	= tiempos_normal;
 			   ultimoLed 	= sizeof(semaforo_normal)/sizeof(gpioMap_t);
-			   printf("Secuencia Normal\n");
+			   if (camSecFlag == TRUE) printf("Secuencia Normal\n");
 		   }
 		   else if (selecSecuencia == 1) {
 			   psecuencia 	= semaforo_desconectado;
 			   ptiempos 	= tiempos_desconectado;
 			   ultimoLed 	= sizeof(semaforo_desconectado)/sizeof(gpioMap_t);
-			   printf("Secuencia Desconectado\n");
+			   if (camSecFlag == TRUE) printf("Secuencia Desconectado\n");
 		   }
 		   else {
 			   psecuencia 	= semaforo_alarma;
 			   ptiempos 	= tiempos_alarma;
 			   ultimoLed 	= sizeof(semaforo_alarma)/sizeof(gpioMap_t);
-			   printf("Secuencia Alarma\n");
+			   if (camSecFlag == TRUE) printf("Secuencia Alarma\n");
 		   }
 		   // Ejecución de la secuencia.
 		   activarSecuencia(psecuencia, TRUE, ptiempos);
