@@ -22,6 +22,8 @@ extern "C" {
 
 /*=====[Definition macros of public constants]===============================*/
 
+#define DEBOUNCE_TIME 50
+
 /*=====[Public function-like macros]=========================================*/
 
 /*=====[Definitions of public data types]====================================*/

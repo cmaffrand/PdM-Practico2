@@ -47,6 +47,10 @@ int main( void )
 	   tick_t * ptiempos 		= tiempos_normal;
 	   uint8_t selecSecuencia 	= 0;
 
+	   // Debounce
+	   delay_t DebounceNBD;
+	   delayInit( &DebounceNBD, DEBOUNCE_TIME);
+
    // Mensaje de inició del programa
    printf("Secuencia Comenzada\n");
    printf("Secuencia Normal\n");
@@ -77,17 +81,22 @@ int main( void )
 		   }
 		   // Ejecución de la secuencia.
 		   activarSecuencia(psecuencia, TRUE, ptiempos);
-		   camSecFlag = FALSE;
+		   // Evita que se modifique la secuencia si la tecla queda presionada
+		   if (leerTecla( TEC2 ) == ON) camSecFlag = FALSE;
 		}
 	   // Si no se cumple el delay pooling de botones.
 		 else {
 			// Se lee la tecla 2 para hacer la selección de la secuencia
 			if (camSecFlag == FALSE) {
 				if (leerTecla( TEC2 ) == OFF) {
-					selecSecuencia++;
-					if (selecSecuencia >= 3) selecSecuencia = 0;
-					camSecFlag = TRUE;
+					// Debounce de la tecla
+					if (delayRead(&DebounceNBD) == TRUE) {
+						selecSecuencia++;
+						if (selecSecuencia >= 3) selecSecuencia = 0;
+						camSecFlag = TRUE;
+					}
 				}
+				else delayInit( &DebounceNBD, DEBOUNCE_TIME);
 			}
 		 }
    }
